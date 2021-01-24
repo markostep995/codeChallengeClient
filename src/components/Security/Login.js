@@ -34,8 +34,32 @@ class Login extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  handleClientValidation = () => {
+    let hasError = false;
+
+    let errors = {};
+
+    if (!this.state.username) {
+      errors['username'] = this.props.t.Errors.username;
+      hasError = true;
+    }
+
+    if (!this.state.password) {
+      errors['password'] = this.props.t.Errors.password;
+      hasError = true;
+    }
+
+    this.setState({ errors });
+    return hasError;
+  };
+
   onSubmit = (e) => {
     e.preventDefault();
+
+    if (this.handleClientValidation() === true) {
+      return;
+    }
+
     const LoginRequest = {
       username: this.state.username,
       password: this.state.password,
@@ -50,10 +74,7 @@ class Login extends Component {
 
     var errorStyle = {
       color: 'red',
-    };
-
-    console.log(this.state);
-    
+    }; 
 
     const translation = this.props.t;
 
@@ -84,7 +105,7 @@ class Login extends Component {
                         <InputField
                           type="text"
                           name="username"
-                          placeholder={translation.Username}
+                          placeholder={translation.Placeholders.username}
                           value={this.state.username}
                           onChange={this.onChange}
                           error={handleErrorMessage(
@@ -99,7 +120,7 @@ class Login extends Component {
                         <InputField
                           type="password"
                           name="password"
-                          placeholder={translation.Password}
+                          placeholder={translation.Placeholders.password}
                           value={this.state.password}
                           onChange={this.onChange}
                           error={handleErrorMessage(

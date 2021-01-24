@@ -14,8 +14,14 @@ export const translations = {
 
     Login: {
       Login: 'Login',
-      Username: 'Username',
-      Password: 'Password',
+      Placeholders: {
+        username: 'Username',
+        password: 'Password',
+      },
+      Errors: {
+        username: "Please insert your username",
+        password: "Please insert your password",
+      },
     },
 
     NavRight: {
