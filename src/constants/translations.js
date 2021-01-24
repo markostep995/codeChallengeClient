@@ -73,5 +73,16 @@ export const translations = {
         confirmPassword: 'Confirm password',
       },
     },
+
+    MessageList: {
+      chatTitle: 'Chat application by Marko Stepanović',
+      typeMessage: 'Type a message...',
+      Tooltips: {
+        sendMessage: 'Send message',
+      },
+      Errors: {
+        messageText: ' '
+      }
+    },
   },
 };

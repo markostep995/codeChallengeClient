@@ -20,6 +20,7 @@ import NavBar from './components/NavBar';
 import Breadcrumb from './components/Breadcrumb';
 import './styles/style.scss';
 import UserList from './components/Containers/UserList';
+import MessageList from './components/Containers/MessageList';
 var jwtDecode = require('jwt-decode');
 
 const jwtToken = localStorage.getItem('jwtToken');
@@ -64,6 +65,12 @@ class App extends Component {
                         exact
                         path="/userList"
                         component={UserList}
+                      />
+
+                      <SecuredRoute
+                        exact
+                        path="/messageList"
+                        component={MessageList}
                       />
                     </Switch>
                   </div>

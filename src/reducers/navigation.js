@@ -5,7 +5,7 @@ const initialState = {
   isTrigger: [], //for active default menu, set blank for horizontal
   collapseMenu: false,
 
-  defaultPath: '/dashboard/default',
+  defaultPath: '/messageList',
   basename: '/datta-able/react/default', // only at build time to set, like /datta-able
   layout: 'vertical', // vertical, horizontal (not available in lite version)
   preLayout: null, // (not available in lite version)

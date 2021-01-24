@@ -13,6 +13,13 @@ export default {
           url: '/userList',
           icon: 'fas fa-users',
         },
+        {
+          id: 'messages',
+          title: 'Chat',
+          type: 'item',
+          url: '/messageList',
+          icon: 'fas fa-comments',
+        },
       ],
     },
     

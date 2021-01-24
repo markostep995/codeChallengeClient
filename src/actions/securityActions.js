@@ -33,7 +33,7 @@ export const login = (LoginRequest, history) => async (dispatch) => {
       payload: decoded,
     });
 
-    history.push('/dashboard');
+    history.push('/messageList');
     dispatch({
       type: CLEAR_ERRORS,
     });

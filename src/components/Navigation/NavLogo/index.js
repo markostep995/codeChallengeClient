@@ -12,8 +12,8 @@ const navLogo = (props) => {
   return (
     <Fragment>
       <div className="navbar-brand header-logo">
-        <Link to="/dashboard">
-          <a href="#!" className="b-brand">
+        <Link to="/messageList">
+          <a href="/messageList" className="b-brand">
             <div className="b-bg">
               <i className="feather icon-trending-up" />
             </div>

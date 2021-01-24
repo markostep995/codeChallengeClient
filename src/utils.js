@@ -83,6 +83,10 @@ export const formatDateWithTime = (date) => {
   return moment(date).format('DD.MM.YYYY. HH:mm:ss');
 };
 
+export const formatDateWithTime2 = (date) => {
+  return moment(date).format('DD.MMM.YYYY. HH:mm:ss');
+};
+
 export const handleErrorMessage = (
   error,
   serverValidationMessage,

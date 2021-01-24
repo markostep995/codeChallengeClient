@@ -390,3 +390,7 @@ th {
 .fa-trash-alt:hover{
   color: rgb(216, 66, 66);
 }
+
+.message-list{
+  height: 60vh;
+}

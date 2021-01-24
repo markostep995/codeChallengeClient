@@ -21,7 +21,7 @@ class Login extends Component {
 
   componentDidMount() {
     if (this.props.loggedUser.validToken) {
-      this.props.history.push('/dashboard');
+      this.props.history.push('/messageList');
     }
   }
 
