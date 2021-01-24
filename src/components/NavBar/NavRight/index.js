@@ -16,7 +16,7 @@ class NavRight extends Component {
     return (
       <div style={style}>
         <Link to={path}>
-          <Tooltip title={tooltipTitle} placement="top" arrow="true">
+          <Tooltip title={tooltipTitle} placement="top" arrow = { true }>
             <i className={iconClassName}></i>
           </Tooltip>
         </Link>
@@ -45,7 +45,7 @@ class NavRight extends Component {
                 <Tooltip
                   title={tooltipText.logout}
                   placement="bottom"
-                  arrow="true"
+                  arrow = { true }
                 >
                   <PowerSettingsNewRoundedIcon className="logout-icon" />
                 </Tooltip>

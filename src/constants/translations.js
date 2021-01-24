@@ -23,5 +23,49 @@ export const translations = {
         logout: 'Logout',
       },
     },
+
+    UserTable: {
+      titleTable: 'Users',
+      HeaderColumns: {
+        username: 'Username',
+        edit: 'Edit',
+        delete: 'Delete',
+      },
+      Tooltips: {
+        addUser: 'Add new user',
+      },
+    },
+
+    ModalForAddUser: {
+      Labels: {
+        title: 'Create a new user',
+      },
+      Errors: {
+        username: "Username can't be empty",
+        password: "Password can't be empty",
+        confirmPassword: 'Please confirm your password',
+      },
+      Placeholders: {
+        username: 'Username',
+        password: 'Password',
+        confirmPassword: 'Confirm password',
+      },
+    },
+
+    ModalForUpdateUser: {
+      Labels: {
+        title: 'Edit user',
+      },
+      Errors: {
+        username: "Username can't be empty",
+        password: "Password can't be empty",
+        confirmPassword: 'Please confirm your password',
+      },
+      Placeholders: {
+        username: 'Username',
+        password: 'Password',
+        confirmPassword: 'Confirm password',
+      },
+    },
   },
 };

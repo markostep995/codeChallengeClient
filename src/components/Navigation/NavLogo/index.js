@@ -18,7 +18,7 @@ const navLogo = (props) => {
               <i className="feather icon-trending-up" />
             </div>
 
-            <span className="b-title">App</span>
+            <span className="b-title">TX Code Challenge</span>
           </a>
         </Link>
         <a

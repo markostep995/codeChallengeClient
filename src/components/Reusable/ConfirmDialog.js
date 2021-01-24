@@ -1,6 +1,6 @@
 import React from 'react';
-import { confirmAlert } from 'react-confirm-alert'; // Import
-import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css'; 
 
 export const confirmDialog = (message, action, optionalMessage) => {
   confirmAlert({
@@ -9,8 +9,8 @@ export const confirmDialog = (message, action, optionalMessage) => {
         <div id="react-confirm-alert">
           <div class="react-confirm-alert">
             <div class="custom-ui button">
-              <p>Da li želite da {message}?</p>
-              <button onClick={onClose}>NE</button>
+              <p>Do you want to {message}?</p>
+              <button onClick={onClose}>NO</button>
               <button
                 onClick={() => {
                   {
@@ -19,7 +19,7 @@ export const confirmDialog = (message, action, optionalMessage) => {
                   onClose();
                 }}
               >
-                DA{optionalMessage}
+                YES{optionalMessage}
               </button>
             </div>
           </div>

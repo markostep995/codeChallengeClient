@@ -313,7 +313,6 @@ th {
   white-space: normal !important;
 }
 
-
 .MuiCardActionArea-root {
   outline: none !important;
 }
@@ -381,4 +380,13 @@ th {
     padding-bottom: 1em;
     z-index: 1028 !important;
   }
+}
+
+.fas:hover {
+  transform: scale(1.1);
+  transition: all .2s ease-in-out;
+}
+
+.fa-trash-alt:hover{
+  color: rgb(216, 66, 66);
 }

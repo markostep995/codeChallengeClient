@@ -22,6 +22,9 @@ import {
   ACTIVATE_USER,
   ACTIVATE_USER_START,
   ACTIVATE_USER_ERROR,
+  GET_NOT_DELETED_USER_LIST,
+  GET_NOT_DELETED_USER_LIST_START,
+  GET_NOT_DELETED_USER_LIST_ERROR,
   CLEAR_ERROR_USER,
 } from './types';
 
@@ -33,6 +36,7 @@ import {
   userDeletePath,
   userDeactivatePath,
   userActivatePath,
+  userFindAllNotDeletedPath,
 } from '../constants/apiEndpoints';
 
 const clearError = () => {
@@ -100,6 +104,7 @@ const getUserListStart = () => {
     type: GET_USER_LIST_START,
   };
 };
+
 const getUserListSuccessfully = (data) => {
   return {
     type: GET_USER_LIST,
@@ -164,6 +169,26 @@ const activateUserSuccessfully = (data) => {
 const activateUserUnsuccessfully = (err) => {
   return {
     type: ACTIVATE_USER_ERROR,
+    payload: err,
+  };
+};
+
+const getNotDeletedUserListStart = () => {
+  return {
+    type: GET_NOT_DELETED_USER_LIST_START,
+  };
+};
+
+const getNotDeletedUserListSuccessfully = (data) => {
+  return {
+    type: GET_NOT_DELETED_USER_LIST,
+    payload: data,
+  };
+};
+
+const getNotDeletedUserListUnsuccessfully = (err) => {
+  return {
+    type: GET_NOT_DELETED_USER_LIST_ERROR,
     payload: err,
   };
 };
@@ -270,6 +295,20 @@ export const activateUser = (id) => {
       })
       .catch((err) => {
         dispatch(activateUserUnsuccessfully(err?.response?.data));
+      });
+  };
+};
+
+export const findAllNotDeletedUsers = () => {
+  return (dispatch) => {
+    dispatch(getNotDeletedUserListStart());
+    return apiService
+      .get(userFindAllNotDeletedPath())
+      .then((response) => {
+        dispatch(getNotDeletedUserListSuccessfully(response.data));
+      })
+      .catch((err) => {
+        dispatch(getNotDeletedUserListUnsuccessfully(err?.response?.data));
       });
   };
 };

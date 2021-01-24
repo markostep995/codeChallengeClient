@@ -42,14 +42,14 @@ class SearchFilter extends Component {
       <div className="row text">
         <div className="Filter col-md-12">
           <span className="searchIcon align-self-center p-2">
-            <img src="/images/pretraga.png" id="searchImg" />
+            <i className="fas fa-search"></i>
           </span>
           <input
             type="text"
             className="searchPlaceholder col-12 p-2"
             id={idName}
             onKeyUp={this.filterTable.bind(this)}
-            placeholder="Pretraga..."
+            placeholder="Search..."
             value={param}
           />
         </div>

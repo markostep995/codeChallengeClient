@@ -20,6 +20,9 @@ import {
   ACTIVATE_USER,
   ACTIVATE_USER_START,
   ACTIVATE_USER_ERROR,
+  GET_NOT_DELETED_USER_LIST,
+  GET_NOT_DELETED_USER_LIST_START,
+  GET_NOT_DELETED_USER_LIST_ERROR,
   CLEAR_ERROR_USER,
 } from '../actions/types';
 
@@ -202,6 +205,29 @@ const activateUserError = (state, action) => {
   };
 };
 
+const findAllNotDeletedUsersStart = (state) => {
+  return {
+    ...state,
+    loading: true,
+  };
+};
+
+const findAllNotDeletedUsers = (state, action) => {
+  return {
+    ...state,
+    loading: false,
+    userList: action.payload,
+  };
+};
+
+const findAllNotDeletedUsersError = (state, action) => {
+  return {
+    ...state,
+    error: action.payload,
+    loading: false,
+  };
+};
+
 export default function (state = initialState, action) {
   switch (action.type) {
     case ADD_USER:
@@ -252,6 +278,13 @@ export default function (state = initialState, action) {
       return activateUserStart(state);
     case ACTIVATE_USER_ERROR:
       return activateUserError(state, action);
+
+    case GET_NOT_DELETED_USER_LIST:
+      return findAllNotDeletedUsers(state, action);
+    case GET_NOT_DELETED_USER_LIST_START:
+      return findAllNotDeletedUsersStart(state);
+    case GET_NOT_DELETED_USER_LIST_ERROR:
+      return findAllNotDeletedUsersError(state, action);
 
     case CLEAR_ERROR_USER:
       return clearError(state);
